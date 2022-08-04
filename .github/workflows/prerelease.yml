@@ -1,13 +1,7 @@
 name: Prerelease
 on:
-  push:
-    branches:
-      - Alpha
-      - Beta
-  pull_request:
-    branches:
-      - Alpha
-      - Beta
+  workflow_dispatch:
+
 jobs:
   Build:
     runs-on: ubuntu-latest
