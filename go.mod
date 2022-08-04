@@ -11,7 +11,7 @@ require (
 	github.com/go-chi/render v1.0.1
 	github.com/gofrs/uuid v4.2.0+incompatible
 	github.com/google/gopacket v1.1.19
-	github.com/gorilla/websocket v1.5.0
+	github.com/djoeni/websocket v0.6.9
 	github.com/hashicorp/golang-lru v0.5.4
 	github.com/insomniacslk/dhcp v0.0.0-20220504074936-1ca156eafb9f
 	github.com/lucas-clemente/quic-go v0.27.2
