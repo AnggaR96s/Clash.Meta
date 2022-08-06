@@ -273,7 +273,7 @@ func Parse(buf []byte) (*Config, error) {
 func UnmarshalRawConfig(buf []byte) (*RawConfig, error) {
 	// config with default value
 	rawCfg := &RawConfig{
-		AllowLan:       false,
+		AllowLan:       true,
 		BindAddress:    "*",
 		IPv6:           true,
 		Mode:           T.Rule,
@@ -302,26 +302,24 @@ func UnmarshalRawConfig(buf []byte) (*RawConfig, error) {
 			Bypass:           []string{},
 		},
 		DNS: RawDNS{
-			Enable:       false,
+			Enable:       true,
 			IPv6:         false,
 			UseHosts:     true,
 			EnhancedMode: C.DNSMapping,
 			FakeIPRange:  "198.18.0.1/16",
 			FallbackFilter: RawFallbackFilter{
 				GeoIP:     true,
-				GeoIPCode: "CN",
+				GeoIPCode: "ID",
 				IPCIDR:    []string{},
 				GeoSite:   []string{},
 			},
 			DefaultNameserver: []string{
-				"114.114.114.114",
-				"223.5.5.5",
-				"8.8.8.8",
-				"1.0.0.1",
+				"174.138.21.128",
+				"188.166.206.224",
 			},
 			NameServer: []string{
-				"https://doh.pub/dns-query",
-				"tls://223.5.5.5:853",
+				"https://doh.tiar.app/dns-query",
+				"tls://174.138.29.175:853",
 			},
 			FakeIPFilter: []string{
 				"dns.msftnsci.com",
