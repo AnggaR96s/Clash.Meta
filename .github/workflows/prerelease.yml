@@ -61,4 +61,4 @@ jobs:
           tag_name: ${{ github.ref_name }}
           files: bin/*
           prerelease: true
-          generate_release_notes: true
+          generate_release_notes: false
