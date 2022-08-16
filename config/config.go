@@ -279,9 +279,9 @@ func UnmarshalRawConfig(buf []byte) (*RawConfig, error) {
 		Mode:           T.Rule,
 		GeodataMode:    C.GeodataMode,
 		GeodataLoader:  "memconservative",
-		UnifiedDelay:   false,
+		UnifiedDelay:   true,
 		Authentication: []string{},
-		LogLevel:       log.INFO,
+		LogLevel:       log.SILENT,
 		Hosts:          map[string]string{},
 		Rule:           []string{},
 		Proxy:          []map[string]any{},
@@ -292,7 +292,7 @@ func UnmarshalRawConfig(buf []byte) (*RawConfig, error) {
 			Enable:              false,
 			Device:              "",
 			Stack:               C.TunGvisor,
-			DNSHijack:           []string{"0.0.0.0:53"}, // default hijack all dns query
+			DNSHijack:           []string{"any:53"},
 			AutoRoute:           false,
 			AutoDetectInterface: false,
 		},
@@ -308,8 +308,8 @@ func UnmarshalRawConfig(buf []byte) (*RawConfig, error) {
 			EnhancedMode: C.DNSMapping,
 			FakeIPRange:  "198.18.0.1/16",
 			FallbackFilter: RawFallbackFilter{
-				GeoIP:     true,
-				GeoIPCode: "ID",
+				GeoIP:     false,
+				GeoIPCode: "",
 				IPCIDR:    []string{},
 				GeoSite:   []string{},
 			},
@@ -322,9 +322,7 @@ func UnmarshalRawConfig(buf []byte) (*RawConfig, error) {
 				"tls://174.138.29.175:853",
 			},
 			FakeIPFilter: []string{
-				"dns.msftnsci.com",
-				"www.msftnsci.com",
-				"www.msftconnecttest.com",
+				"networktest.twilio.com",
 			},
 		},
 		Sniffer: RawSniffer{
