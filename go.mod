@@ -43,7 +43,7 @@ require (
 
 replace github.com/vishvananda/netlink => github.com/MetaCubeX/netlink v1.2.0-beta.0.20220529072258-d6853f887820
 
-replace github.com/lucas-clemente/quic-go => github.com/tobyxdd/quic-go v0.28.1-0.20220706211558-7780039ad599
+replace github.com/lucas-clemente/quic-go => github.com/tobyxdd/quic-go v0.28.1
 
 require (
 	github.com/ajg/form v1.5.1 // indirect
