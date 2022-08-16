@@ -23,7 +23,7 @@ import (
 	C "github.com/Dreamacro/clash/constant"
 	"github.com/Dreamacro/clash/log"
 	hyCongestion "github.com/Dreamacro/clash/transport/hysteria/congestion"
-	"github.com/lucas-clemente/quic-go/congestion"
+	"github.com/lucas-clemente/quic-go/internal/congestion"
 	M "github.com/sagernet/sing/common/metadata"
 )
 

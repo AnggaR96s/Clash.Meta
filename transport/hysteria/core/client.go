@@ -11,7 +11,7 @@ import (
 	"github.com/Dreamacro/clash/transport/hysteria/transport"
 	"github.com/Dreamacro/clash/transport/hysteria/utils"
 	"github.com/lucas-clemente/quic-go"
-	"github.com/lucas-clemente/quic-go/congestion"
+	"github.com/lucas-clemente/quic-go/internal/congestion"
 	"github.com/lunixbochs/struc"
 	"math/rand"
 	"net"
