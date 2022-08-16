@@ -1,6 +1,6 @@
 NAME=Clash.Meta
 BINDIR=bin
-VERSION=AnggaR96s$(shell git rev-parse --short HEAD)
+VERSION=AnggaR96s-$(shell git rev-parse --short HEAD)
 
 BUILDTIME=$(shell date -u)
 GOBUILD=CGO_ENABLED=0 go build -trimpath -ldflags '-X "github.com/Dreamacro/clash/constant.Version=$(VERSION)" \
