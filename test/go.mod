@@ -77,6 +77,6 @@ require (
 	gopkg.in/tomb.v1 v1.0.0-20141024135613-dd632973f1e7 // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
 	gotest.tools/v3 v3.1.0 // indirect
-	gvisor.dev/gvisor v0.0.0-20220810234332-45096a971e66 // indirect
+	gvisor.dev/gvisor v0.0.0-20220816011358-2bb73c7bd7dc // indirect
 	lukechampine.com/blake3 v1.1.7 // indirect
 )
