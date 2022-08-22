@@ -119,6 +119,7 @@ type Tun struct {
 	AutoRoute           bool             `yaml:"auto-route" json:"auto-route"`
 	AutoDetectInterface bool             `yaml:"auto-detect-interface" json:"auto-detect-interface"`
 	TunAddressPrefix    netip.Prefix     `yaml:"-" json:"-"`
+	RedirectToTun       []string         `yaml:"-" json:"-"`
 }
 
 // IPTables config
@@ -295,6 +296,10 @@ func UnmarshalRawConfig(buf []byte) (*RawConfig, error) {
 			DNSHijack:           []string{"any:53"},
 			AutoRoute:           false,
 			AutoDetectInterface: false,
+		},
+		EBpf: EBpf{
+			RedirectToTun: []string{},
+			AutoRedir:     []string{},
 		},
 		IPTables: IPTables{
 			Enable:           false,
@@ -963,6 +968,7 @@ func parseTun(rawTun RawTun, general *General, dnsCfg *DNS) (*Tun, error) {
 		AutoRoute:           rawTun.AutoRoute,
 		AutoDetectInterface: rawTun.AutoDetectInterface,
 		TunAddressPrefix:    tunAddressPrefix,
+		RedirectToTun:       rawTun.RedirectToTun,
 	}, nil
 }
 
