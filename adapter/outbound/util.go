@@ -103,7 +103,8 @@ func resolveUDPAddrWithPrefer(network, address string, prefer C.DNSPrefer) (*net
 			}
 			ip = fallback
 		}
-	case C.IPv4Prefer | C.DualStack:
+	default:
+		// C.IPv4Prefer, C.DualStack and other
 		var ips []netip.Addr
 		ips, err = resolver.ResolveAllIPProxyServerHost(host)
 		var fallback netip.Addr
@@ -118,7 +119,10 @@ func resolveUDPAddrWithPrefer(network, address string, prefer C.DNSPrefer) (*net
 					}
 				}
 			}
-			ip = fallback
+
+			if !ip.IsValid() && fallback.IsValid() {
+				ip = fallback
+			}
 		}
 	}
 
